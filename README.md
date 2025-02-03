@@ -1,12 +1,14 @@
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct.svg)](https://stand-with-ukraine.pp.ua)
-
-[中文](https://pnpm.io/zh/) |
+[简体中文](https://pnpm.io/zh/) |
 [日本語](https://pnpm.io/ja/) |
 [한국어](https://pnpm.io/ko/) |
 [Italiano](https://pnpm.io/it/) |
-[Français](https://pnpm.io/fr/)
+[Português Brasileiro](https://pnpm.io/pt/)
 
-![](https://i.imgur.com/qlW1eEG.png)
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://i.imgur.com/qlW1eEG.png">
+  <source media="(prefers-color-scheme: dark)"  srcset="https://i.imgur.com/qlW1eEG.png">
+  <img src="https://i.imgur.com/qlW1eEG.png" alt="pnpm">
+</picture>
 
 Fast, disk space efficient package manager:
 
@@ -18,16 +20,36 @@ Fast, disk space efficient package manager:
 * **Works as a Node.js version manager.** See [pnpm env use](https://pnpm.io/cli/env).
 * **Works everywhere.** Supports Windows, Linux, and macOS.
 * **Battle-tested.** Used in production by teams of [all sizes](https://pnpm.io/users) since 2016.
+* [See the full feature comparison with npm and Yarn](https://pnpm.io/feature-comparison).
 
 To quote the [Rush](https://rushjs.io/) team:
 
 > Microsoft uses pnpm in Rush repos with hundreds of projects and hundreds of PRs per day, and we’ve found it to be very fast and reliable.
 
-[![npm version](https://img.shields.io/npm/v/pnpm.svg)](https://www.npmjs.com/package/pnpm)
+[![npm version](https://img.shields.io/npm/v/pnpm.svg?label=latest)](https://github.com/pnpm/pnpm/releases/latest)
 [![Join the chat at Discord](https://img.shields.io/discord/731599538665553971.svg)](https://r.pnpm.io/chat)
-[![OpenCollective](https://opencollective.com/pnpm/backers/badge.svg)](#backers)
-[![OpenCollective](https://opencollective.com/pnpm/sponsors/badge.svg)](#sponsors)
-[![Twitter Follow](https://img.shields.io/twitter/follow/pnpmjs.svg?style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=pnpmjs&region=follow_link)
+[![OpenCollective](https://opencollective.com/pnpm/backers/badge.svg)](https://opencollective.com/pnpm)
+[![OpenCollective](https://opencollective.com/pnpm/sponsors/badge.svg)](https://opencollective.com/pnpm)
+[![X Follow](https://img.shields.io/twitter/follow/pnpmjs.svg?style=social&label=Follow)](https://x.com/intent/follow?screen_name=pnpmjs&region=follow_link)
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
+
+## Platinum Sponsors
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://bit.dev/?utm_source=pnpm&utm_medium=readme" target="_blank"><img src="https://pnpm.io/img/users/bit.svg" width="80" alt="Bit"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://sanity.io/?utm_source=pnpm&utm_medium=readme" target="_blank"><img src="https://pnpm.io/img/users/sanity.svg" width="180" alt="Bit"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://figma.com/?utm_source=pnpm&utm_medium=readme" target="_blank"><img src="https://pnpm.io/img/users/figma.svg" width="80" alt="Figma"></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Gold Sponsors
 
@@ -35,27 +57,88 @@ To quote the [Rush](https://rushjs.io/) team:
   <tbody>
     <tr>
       <td align="center" valign="middle">
-        <a href="https://bit.dev/?utm_source=pnpm&utm_medium=readme" target="_blank">
-          <img src="https://raw.githubusercontent.com/pnpm/pnpm.github.io/main/static/img/users/bit.svg" width="80">
+        <a href="https://discord.com/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://pnpm.io/img/users/discord.svg" />
+            <source media="(prefers-color-scheme: dark)" srcset="https://pnpm.io/img/users/discord_light.svg" />
+            <img src="https://pnpm.io/img/users/discord.svg" width="220" alt="Discord" />
+          </picture>
         </a>
       </td>
       <td align="center" valign="middle">
-        <a href="https://nhost.io/?utm_source=pnpm&utm_medium=readme#gh-light-mode-only" target="_blank">
-          <img src="https://raw.githubusercontent.com/pnpm/pnpm.github.io/main/static/img/users/nhost.svg" width="180">
-        </a>
-        <a href="https://nhost.io/?utm_source=pnpm&utm_medium=readme#gh-dark-mode-only" target="_blank">
-          <img src="https://raw.githubusercontent.com/pnpm/pnpm.github.io/main/static/img/users/nhost_light.svg" width="180">
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://novu.co/?utm_source=pnpm&utm_medium=readme#gh-light-mode-only" target="_blank">
-          <img src="https://raw.githubusercontent.com/pnpm/pnpm.github.io/main/static/img/users/novu.svg" width="180">
-        </a>
-        <a href="https://novu.co/?utm_source=pnpm&utm_medium=readme#gh-dark-mode-only" target="_blank">
-          <img src="https://raw.githubusercontent.com/pnpm/pnpm.github.io/main/static/img/users/novu_light.svg" width="180">
+        <a href="https://prisma.io/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://pnpm.io/img/users/prisma.svg" />
+            <source media="(prefers-color-scheme: dark)" srcset="https://pnpm.io/img/users/prisma_light.svg" />
+            <img src="https://pnpm.io/img/users/prisma.svg" width="180" alt="Prisma" />
+          </picture>
         </a>
       </td>
     </tr>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://uscreen.de/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://pnpm.io/img/users/uscreen.svg" />
+            <source media="(prefers-color-scheme: dark)" srcset="https://pnpm.io/img/users/uscreen_light.svg" />
+            <img src="https://pnpm.io/img/users/uscreen.svg" width="180" alt="u|screen" />
+          </picture>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://www.jetbrains.com/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://pnpm.io/img/users/jetbrains.svg" />
+            <source media="(prefers-color-scheme: dark)" srcset="https://pnpm.io/img/users/jetbrains.svg" />
+            <img src="https://pnpm.io/img/users/jetbrains.svg" width="180" alt="JetBrains" />
+          </picture>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://nx.dev/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://pnpm.io/img/users/nx.svg" />
+            <source media="(prefers-color-scheme: dark)" srcset="https://pnpm.io/img/users/nx_light.svg" />
+            <img src="https://pnpm.io/img/users/nx.svg" width="120" alt="Nx" />
+          </picture>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://coderabbit.ai/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://pnpm.io/img/users/coderabbit.svg" />
+            <source media="(prefers-color-scheme: dark)" srcset="https://pnpm.io/img/users/coderabbit_light.svg" />
+            <img src="https://pnpm.io/img/users/coderabbit.svg" width="220" alt="CodeRabbit" />
+          </picture>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://route4me.com/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <img src="https://pnpm.io/img/users/route4me.svg" width="220" alt="Route4Me" />
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://workleap.com/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://pnpm.io/img/users/workleap.svg" />
+            <source media="(prefers-color-scheme: dark)" srcset="https://pnpm.io/img/users/workleap_light.svg" />
+            <img src="https://pnpm.io/img/users/workleap.svg" width="190" alt="Workleap" />
+          </picture>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://canva.com/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <img src="https://pnpm.io/img/users/canva.svg" width="120" alt="Canva" />
+        </a>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 ## Silver Sponsors
@@ -64,29 +147,87 @@ To quote the [Rush](https://rushjs.io/) team:
   <tbody>
     <tr>
       <td align="center" valign="middle">
-        <a href="https://prisma.io/?utm_source=pnpm&utm_medium=readme#gh-light-mode-only" target="_blank">
-          <img src="https://raw.githubusercontent.com/pnpm/pnpm.github.io/main/static/img/users/prisma.svg" width="180">
-        </a>
-        <a href="https://prisma.io/?utm_source=pnpm&utm_medium=readme#gh-dark-mode-only" target="_blank">
-          <img src="https://raw.githubusercontent.com/pnpm/pnpm.github.io/main/static/img/users/prisma_light.svg" width="180">
-        </a>
-      </td>
-      <td align="center" valign="middle">
         <a href="https://leniolabs.com/?utm_source=pnpm&utm_medium=readme" target="_blank">
-          <img src="https://raw.githubusercontent.com/pnpm/pnpm.github.io/main/static/img/users/leniolabs.jpg" width="80">
+          <img src="https://pnpm.io/img/users/leniolabs.jpg" width="40" alt="Leniolabs_">
         </a>
       </td>
       <td align="center" valign="middle">
-        <a href="https://vercel.com/?utm_source=pnpm&utm_medium=readme#gh-light-mode-only" target="_blank">
-          <img src="https://raw.githubusercontent.com/pnpm/pnpm.github.io/main/static/img/users/vercel.svg" width="180">
-        </a>
-        <a href="https://vercel.com/?utm_source=pnpm&utm_medium=readme#gh-dark-mode-only" target="_blank">
-          <img src="https://raw.githubusercontent.com/pnpm/pnpm.github.io/main/static/img/users/vercel_light.svg" width="180">
+        <a href="https://vercel.com/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://pnpm.io/img/users/vercel.svg" />
+            <source media="(prefers-color-scheme: dark)" srcset="https://pnpm.io/img/users/vercel_light.svg" />
+            <img src="https://pnpm.io/img/users/vercel.svg" width="90" alt="Vercel" />
+          </picture>
         </a>
       </td>
       <td align="center" valign="middle">
-        <a href="https://www.takeshape.io/?utm_source=pnpm&utm_medium=readme" target="_blank">
-          <img src="https://raw.githubusercontent.com/pnpm/pnpm.github.io/main/static/img/users/takeshape.svg" width="280">
+        <a href="https://depot.dev/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://pnpm.io/img/users/depot.svg" />
+            <source media="(prefers-color-scheme: dark)" srcset="https://pnpm.io/img/users/depot_light.svg" />
+            <img src="https://pnpm.io/img/users/depot.svg" width="100" alt="Depot" />
+          </picture>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://moonrepo.dev/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://pnpm.io/img/users/moonrepo.svg" />
+            <source media="(prefers-color-scheme: dark)" srcset="https://pnpm.io/img/users/moonrepo_light.svg" />
+            <img src="https://pnpm.io/img/users/moonrepo.svg" width="100" alt="moonrepo" />
+          </picture>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://devowl.io/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://pnpm.io/img/users/devowlio.svg" />
+            <source media="(prefers-color-scheme: dark)" srcset="https://pnpm.io/img/users/devowlio.svg" />
+            <img src="https://pnpm.io/img/users/devowlio.svg" width="100" alt="devowl.io" />
+          </picture>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://cerbos.dev/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://pnpm.io/img/users/cerbos.svg" />
+            <source media="(prefers-color-scheme: dark)" srcset="https://pnpm.io/img/users/cerbos_light.svg" />
+            <img src="https://pnpm.io/img/users/cerbos.svg" width="90" alt="Cerbos" />
+          </picture>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://vlt.sh/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://pnpm.io/img/users/vlt.svg" />
+            <source media="(prefers-color-scheme: dark)" srcset="https://pnpm.io/img/users/vlt_light.svg" />
+            <img src="https://pnpm.io/img/users/vlt.svg" width="70" alt="vlt" />
+          </picture>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://vite.dev/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <img src="https://pnpm.io/img/users/vitejs.svg" width="32" alt="Vite">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://macpaw.com/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://pnpm.io/img/users/macpaw.svg" />
+            <source media="(prefers-color-scheme: dark)" srcset="https://pnpm.io/img/users/macpaw_light.svg" />
+            <img src="https://pnpm.io/img/users/macpaw.svg" width="100" />
+          </picture>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://opensource.mercedes-benz.com/?utm_source=pnpm&utm_medium=readme" target="_blank">
+          <img src="https://pnpm.io/img/users/mercedes.svg" width="32" alt="Vite">
         </a>
       </td>
     </tr>
@@ -98,7 +239,7 @@ Support this project by [becoming a sponsor](https://opencollective.com/pnpm#spo
 ## Background
 
 pnpm uses a content-addressable filesystem to store all files from all module directories on a disk.
-When using npm or Yarn, if you have 100 projects using lodash, you will have 100 copies of lodash on disk.
+When using npm, if you have 100 projects using lodash, you will have 100 copies of lodash on disk.
 With pnpm, lodash will be stored in a content-addressable storage, so:
 
 1. If you depend on different versions of lodash, only the files that differ are added to the store.
@@ -119,7 +260,8 @@ why it works fine with the Node.js ecosystem, read this small article: [Flat nod
 - [Usage](https://pnpm.io/pnpm-cli)
 - [Frequently Asked Questions](https://pnpm.io/faq)
 - [Chat](https://r.pnpm.io/chat)
-- [Twitter](https://twitter.com/pnpmjs)
+- [X](https://x.com/pnpmjs)
+- [Bluesky](https://bsky.app/profile/pnpm.io)
 
 ## Benchmark
 
@@ -129,18 +271,7 @@ Benchmarks on an app with lots of dependencies:
 
 ![](https://pnpm.io/img/benchmarks/alotta-files.svg)
 
-## Backers
-
-Thank you to all our backers! [Become a backer](https://opencollective.com/pnpm#backer)
-
-<a href="https://opencollective.com/pnpm#backers" target="_blank"><img src="https://opencollective.com/pnpm/backers.svg?width=890"></a>
-
-## Contributors
-
-This project exists thanks to all the people who contribute. [Contribute](../../blob/main/CONTRIBUTING.md).
-
-<a href="../../graphs/contributors"><img src="https://opencollective.com/pnpm/contributors.svg?width=890&button=false" /></a>
-
 ## License
 
 [MIT](https://github.com/pnpm/pnpm/blob/main/LICENSE)
+

@@ -1,5 +1,233 @@
 # @pnpm/render-peer-issues
 
+## 1000.0.3
+
+### Patch Changes
+
+- acdf26d: Replace `strip-ansi` with the built-in `util.stripVTControlCharacters` [#9009](https://github.com/pnpm/pnpm/pull/9009).
+- Updated dependencies [b562deb]
+  - @pnpm/types@1000.1.1
+  - @pnpm/error@1000.0.2
+  - @pnpm/parse-overrides@1000.0.2
+
+## 1000.0.2
+
+### Patch Changes
+
+- Updated dependencies [9591a18]
+  - @pnpm/types@1000.1.0
+
+## 1000.0.1
+
+### Patch Changes
+
+- @pnpm/error@1000.0.1
+- @pnpm/parse-overrides@1000.0.1
+
+## 5.0.10
+
+### Patch Changes
+
+- ee5dde3: Don't fail to render missing peer dependencies, when the parents field is an empty array.
+  - @pnpm/error@6.0.3
+  - @pnpm/parse-overrides@5.1.2
+
+## 5.0.9
+
+### Patch Changes
+
+- 9ff7724: Fix white text on light background for project name [#8526](https://github.com/pnpm/pnpm/pull/8526).
+  - @pnpm/error@6.0.2
+  - @pnpm/parse-overrides@5.1.1
+
+## 5.0.8
+
+### Patch Changes
+
+- Updated dependencies [d500d9f]
+  - @pnpm/types@12.2.0
+
+## 5.0.7
+
+### Patch Changes
+
+- Updated dependencies [7ee59a1]
+  - @pnpm/types@12.1.0
+
+## 5.0.6
+
+### Patch Changes
+
+- Updated dependencies [cb006df]
+  - @pnpm/types@12.0.0
+
+## 5.0.5
+
+### Patch Changes
+
+- Updated dependencies [0f0e441]
+- Updated dependencies [0ef168b]
+  - @pnpm/parse-overrides@5.1.0
+  - @pnpm/types@11.1.0
+
+## 5.0.4
+
+### Patch Changes
+
+- Updated dependencies [dd00eeb]
+- Updated dependencies
+  - @pnpm/types@11.0.0
+
+## 5.0.3
+
+### Patch Changes
+
+- Updated dependencies [13e55b2]
+  - @pnpm/types@10.1.1
+
+## 5.0.2
+
+### Patch Changes
+
+- Updated dependencies [45f4262]
+  - @pnpm/types@10.1.0
+
+## 5.0.1
+
+### Patch Changes
+
+- Updated dependencies [a7aef51]
+  - @pnpm/error@6.0.1
+  - @pnpm/parse-overrides@5.0.1
+
+## 5.0.0
+
+### Major Changes
+
+- 43cdd87: Node.js v16 support dropped. Use at least Node.js v18.12.
+
+### Minor Changes
+
+- aa33269: Peer dependency rules should only affect reporting, not data in the lockfile.
+
+### Patch Changes
+
+- Updated dependencies [7733f3a]
+- Updated dependencies [3ded840]
+- Updated dependencies [43cdd87]
+- Updated dependencies [730929e]
+  - @pnpm/types@10.0.0
+  - @pnpm/error@6.0.0
+  - @pnpm/parse-overrides@5.0.0
+  - @pnpm/matcher@6.0.0
+
+## 4.0.6
+
+### Patch Changes
+
+- Updated dependencies [4d34684f1]
+  - @pnpm/types@9.4.2
+
+## 4.0.5
+
+### Patch Changes
+
+- Updated dependencies
+  - @pnpm/types@9.4.1
+
+## 4.0.4
+
+### Patch Changes
+
+- Updated dependencies [43ce9e4a6]
+  - @pnpm/types@9.4.0
+
+## 4.0.3
+
+### Patch Changes
+
+- Updated dependencies [d774a3196]
+  - @pnpm/types@9.3.0
+
+## 4.0.2
+
+### Patch Changes
+
+- Updated dependencies [aa2ae8fe2]
+  - @pnpm/types@9.2.0
+
+## 4.0.1
+
+### Patch Changes
+
+- Updated dependencies [a9e0b7cbf]
+  - @pnpm/types@9.1.0
+
+## 4.0.0
+
+### Major Changes
+
+- eceaa8b8b: Node.js 14 support dropped.
+
+### Patch Changes
+
+- Updated dependencies [eceaa8b8b]
+  - @pnpm/types@9.0.0
+
+## 3.0.3
+
+### Patch Changes
+
+- Updated dependencies [b77651d14]
+  - @pnpm/types@8.10.0
+
+## 3.0.2
+
+### Patch Changes
+
+- Updated dependencies [702e847c1]
+  - @pnpm/types@8.9.0
+
+## 3.0.1
+
+### Patch Changes
+
+- Updated dependencies [844e82f3a]
+  - @pnpm/types@8.8.0
+
+## 3.0.0
+
+### Major Changes
+
+- f884689e0: Require `@pnpm/logger` v5.
+
+## 2.1.2
+
+### Patch Changes
+
+- Updated dependencies [d665f3ff7]
+  - @pnpm/types@8.7.0
+
+## 2.1.1
+
+### Patch Changes
+
+- Updated dependencies [156cc1ef6]
+  - @pnpm/types@8.6.0
+
+## 2.1.0
+
+### Minor Changes
+
+- c990a409f: Print the versions of packages in peer dependency warnings and errors.
+
+## 2.0.6
+
+### Patch Changes
+
+- Updated dependencies [c90798461]
+  - @pnpm/types@8.5.0
+
 ## 2.0.5
 
 ### Patch Changes

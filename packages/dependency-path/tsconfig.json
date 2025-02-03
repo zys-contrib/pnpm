@@ -6,11 +6,11 @@
   },
   "include": [
     "src/**/*.ts",
-    "../../typings/**/*.d.ts"
+    "../../__typings__/**/*.d.ts"
   ],
   "references": [
     {
-      "path": "../crypto.base32-hash"
+      "path": "../../crypto/hash"
     },
     {
       "path": "../types"

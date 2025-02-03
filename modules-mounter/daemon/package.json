@@ -1,0 +1,69 @@
+{
+  "name": "@pnpm/mount-modules",
+  "version": "1001.0.7",
+  "description": "Mounts a node_modules directory with FUSE",
+  "main": "lib/index.js",
+  "bin": "bin/mount-modules.js",
+  "types": "lib/index.d.ts",
+  "engines": {
+    "node": ">=18.12"
+  },
+  "files": [
+    "lib",
+    "!*.map",
+    "bin"
+  ],
+  "scripts": {
+    "lint": "eslint \"src/**/*.ts\" \"test/**/*.ts\"",
+    "test": "pnpm run compile && pnpm run _test",
+    "prepublishOnly": "pnpm run compile",
+    "pretest": "node ../../pnpm/dist/pnpm.cjs install --dir=test/__fixtures__/simple",
+    "_test": "pnpm pretest && jest",
+    "compile": "tsc --build && pnpm run lint --fix"
+  },
+  "repository": "https://github.com/pnpm/pnpm/blob/main/modules-mounter/daemon",
+  "keywords": [
+    "pnpm10",
+    "pnpm",
+    "shrinkwrap",
+    "lockfile"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pnpm/pnpm/issues"
+  },
+  "homepage": "https://github.com/pnpm/pnpm/blob/main/modules-mounter/daemon#readme",
+  "peerDependencies": {
+    "@pnpm/logger": ">=5.1.0 <1001.0.0"
+  },
+  "devDependencies": {
+    "@pnpm/constants": "workspace:*",
+    "@pnpm/logger": "workspace:*",
+    "@pnpm/mount-modules": "workspace:*",
+    "@types/normalize-path": "catalog:",
+    "rimraf": "catalog:"
+  },
+  "dependencies": {
+    "@pnpm/config": "workspace:*",
+    "@pnpm/dependency-path": "workspace:*",
+    "@pnpm/lockfile.fs": "workspace:*",
+    "@pnpm/lockfile.utils": "workspace:*",
+    "@pnpm/logger": "workspace:*",
+    "@pnpm/store-path": "workspace:*",
+    "@pnpm/store.cafs": "workspace:*",
+    "@pnpm/types": "workspace:*",
+    "hyperdrive-schemas": "catalog:",
+    "load-json-file": "catalog:",
+    "normalize-path": "catalog:"
+  },
+  "funding": "https://opencollective.com/pnpm",
+  "optionalDependencies": {
+    "fuse-native": "catalog:"
+  },
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "jest": {
+    "preset": "@pnpm/jest-config"
+  }
+}
