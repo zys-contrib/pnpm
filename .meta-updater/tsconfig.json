@@ -11,10 +11,19 @@
   ],
   "references": [
     {
-      "path": "../packages/lockfile-file"
+      "path": "../config/parse-overrides"
+    },
+    {
+      "path": "../lockfile/fs"
+    },
+    {
+      "path": "../packages/logger"
     },
     {
       "path": "../packages/types"
+    },
+    {
+      "path": "../workspace/read-manifest"
     }
   ]
 }

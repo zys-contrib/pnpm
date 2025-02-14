@@ -1,8 +1,9 @@
-import baseLogger, {
-  LogBase,
+import {
+  type LogBase,
+  logger,
 } from '@pnpm/logger'
 
-export const contextLogger = baseLogger('context')
+export const contextLogger = logger('context')
 
 export interface ContextMessage {
   currentLockfileExists: boolean
@@ -10,4 +11,4 @@ export interface ContextMessage {
   virtualStoreDir: string
 }
 
-export type ContextLog = {name: 'pnpm:context'} & LogBase & ContextMessage
+export type ContextLog = { name: 'pnpm:context' } & LogBase & ContextMessage

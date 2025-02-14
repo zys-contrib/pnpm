@@ -1,12 +1,13 @@
-import baseLogger, {
-  LogBase,
+import {
+  type LogBase,
+  logger,
 } from '@pnpm/logger'
 
-export const updateCheckLogger = baseLogger('update-check')
+export const updateCheckLogger = logger('update-check')
 
 export interface UpdateCheckMessage {
   currentVersion: string
   latestVersion: string
 }
 
-export type UpdateCheckLog = {name: 'pnpm:update-check'} & LogBase & UpdateCheckMessage
+export type UpdateCheckLog = { name: 'pnpm:update-check' } & LogBase & UpdateCheckMessage

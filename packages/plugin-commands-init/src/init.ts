@@ -1,21 +1,23 @@
 import fs from 'fs'
 import path from 'path'
 import { docsUrl } from '@pnpm/cli-utils'
-import { UniversalOptions } from '@pnpm/config'
-import PnpmError from '@pnpm/error'
-import writeProjectManifest from '@pnpm/write-project-manifest'
+import { packageManager } from '@pnpm/cli-meta'
+import { type Config, type UniversalOptions } from '@pnpm/config'
+import { PnpmError } from '@pnpm/error'
+import { type ProjectManifest } from '@pnpm/types'
+import { writeProjectManifest } from '@pnpm/write-project-manifest'
 import renderHelp from 'render-help'
 import { parseRawConfig } from './utils'
 
 export const rcOptionsTypes = cliOptionsTypes
 
-export function cliOptionsTypes () {
+export function cliOptionsTypes (): Record<string, unknown> {
   return {}
 }
 
 export const commandNames = ['init']
 
-export function help () {
+export function help (): string {
   return renderHelp({
     description: 'Create a package.json file',
     descriptionLists: [],
@@ -25,21 +27,22 @@ export function help () {
 }
 
 export async function handler (
-  opts: Pick<UniversalOptions, 'rawConfig'>,
+  opts: Pick<UniversalOptions, 'rawConfig'> & Pick<Config, 'cliOptions'> & Partial<Pick<Config, 'initPackageManager'>>,
   params?: string[]
-) {
+): Promise<string> {
   if (params?.length) {
     throw new PnpmError('INIT_ARG', 'init command does not accept any arguments', {
       hint: `Maybe you wanted to run "pnpm create ${params.join(' ')}"`,
     })
   }
   // Using cwd instead of the dir option because the dir option
-  // is set to the first parent directory that has a package.json file.
-  const manifestPath = path.join(process.cwd(), 'package.json')
+  // is set to the first parent directory that has a package.json file
+  // But --dir option from cliOptions should be respected.
+  const manifestPath = path.join(opts.cliOptions.dir ?? process.cwd(), 'package.json')
   if (fs.existsSync(manifestPath)) {
     throw new PnpmError('PACKAGE_JSON_EXISTS', 'package.json already exists')
   }
-  const manifest = {
+  const manifest: ProjectManifest = {
     name: path.basename(process.cwd()),
     version: '1.0.0',
     description: '',
@@ -53,6 +56,9 @@ export async function handler (
   }
   const config = await parseRawConfig(opts.rawConfig)
   const packageJson = { ...manifest, ...config }
+  if (opts.initPackageManager) {
+    packageJson.packageManager = `pnpm@${packageManager.version}`
+  }
   await writeProjectManifest(manifestPath, packageJson, {
     indent: 2,
   })

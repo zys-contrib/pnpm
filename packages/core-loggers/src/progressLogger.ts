@@ -1,9 +1,10 @@
-import baseLogger, {
-  LogBase,
-  Logger,
+import {
+  type LogBase,
+  type Logger,
+  logger,
 } from '@pnpm/logger'
 
-export const progressLogger = baseLogger('progress') as Logger<ProgressMessage> // eslint-disable-line
+export const progressLogger = logger('progress') as Logger<ProgressMessage>
 
 export type ProgressMessage = {
   packageId: string
@@ -16,4 +17,4 @@ export type ProgressMessage = {
   to: string
 }
 
-export type ProgressLog = {name: 'pnpm:progress'} & LogBase & ProgressMessage
+export type ProgressLog = { name: 'pnpm:progress' } & LogBase & ProgressMessage

@@ -6,26 +6,32 @@
   },
   "include": [
     "src/**/*.ts",
-    "../../typings/**/*.d.ts"
+    "../../__typings__/**/*.d.ts"
   ],
   "references": [
     {
-      "path": "../../privatePackages/prepare"
+      "path": "../../__utils__/prepare"
     },
     {
-      "path": "../../privatePackages/test-fixtures"
+      "path": "../../__utils__/test-fixtures"
     },
     {
-      "path": "../cli-utils"
+      "path": "../../cli/cli-meta"
     },
     {
-      "path": "../config"
+      "path": "../../cli/cli-utils"
+    },
+    {
+      "path": "../../config/config"
+    },
+    {
+      "path": "../../pkg-manifest/write-project-manifest"
     },
     {
       "path": "../error"
     },
     {
-      "path": "../write-project-manifest"
+      "path": "../types"
     }
   ]
 }

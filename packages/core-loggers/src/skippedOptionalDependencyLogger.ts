@@ -1,14 +1,15 @@
-import baseLogger, {
-  LogBase,
+import {
+  type LogBase,
+  logger,
 } from '@pnpm/logger'
 
-export const skippedOptionalDependencyLogger = baseLogger<SkippedOptionalDependencyMessage>('skipped-optional-dependency')
+export const skippedOptionalDependencyLogger = logger<SkippedOptionalDependencyMessage>('skipped-optional-dependency')
 
-export type SkippedOptionalDependencyLog = {name: 'pnpm:skipped-optional-dependency'} & LogBase & SkippedOptionalDependencyMessage
+export type SkippedOptionalDependencyLog = { name: 'pnpm:skipped-optional-dependency' } & LogBase & SkippedOptionalDependencyMessage
 
 export type SkippedOptionalDependencyMessage = {
   details?: string
-  parents?: Array<{id: string, name: string, version: string}>
+  parents?: Array<{ id: string, name: string, version: string }>
   prefix: string
 } & ({
   package: {
@@ -21,6 +22,7 @@ export type SkippedOptionalDependencyMessage = {
   | 'build_failure'
 } | {
   package: {
+    id?: never
     name: string | undefined
     version: string | undefined
     pref: string

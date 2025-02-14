@@ -1,19 +1,19 @@
 import path from 'path'
 import pnpmExec from '@pnpm/exec'
-import exportableManifest from '@pnpm/exportable-manifest'
+import { createExportableManifest } from '@pnpm/exportable-manifest'
 import {
   getLockfileImporterId,
-  ProjectSnapshot,
+  type ProjectSnapshot,
   readWantedLockfile,
   writeWantedLockfile,
-} from '@pnpm/lockfile-file'
-import { pruneSharedLockfile } from '@pnpm/prune-lockfile'
-import readProjectManifest from '@pnpm/read-project-manifest'
-import { DEPENDENCIES_FIELDS } from '@pnpm/types'
-import fromPairs from 'ramda/src/fromPairs.js'
+} from '@pnpm/lockfile.fs'
+import { pruneSharedLockfile } from '@pnpm/lockfile.pruner'
+import { readProjectManifest } from '@pnpm/read-project-manifest'
+import { DEPENDENCIES_FIELDS, type ProjectId } from '@pnpm/types'
+import pickBy from 'ramda/src/pickBy'
 import renameOverwrite from 'rename-overwrite'
 
-export default async function (lockfileDir: string, projectDir: string) {
+export async function makeDedicatedLockfile (lockfileDir: string, projectDir: string): Promise<void> {
   const lockfile = await readWantedLockfile(lockfileDir, { ignoreIncompatible: false })
   if (lockfile == null) {
     throw new Error('no lockfile found')
@@ -23,12 +23,12 @@ export default async function (lockfileDir: string, projectDir: string) {
   const baseImporterId = getLockfileImporterId(lockfileDir, projectDir)
   for (const [importerId, importer] of Object.entries(allImporters)) {
     if (importerId.startsWith(`${baseImporterId}/`)) {
-      const newImporterId = importerId.slice(baseImporterId.length + 1)
+      const newImporterId = importerId.slice(baseImporterId.length + 1) as ProjectId
       lockfile.importers[newImporterId] = projectSnapshotWithoutLinkedDeps(importer)
       continue
     }
     if (importerId === baseImporterId) {
-      lockfile.importers['.'] = projectSnapshotWithoutLinkedDeps(importer)
+      lockfile.importers['.' as ProjectId] = projectSnapshotWithoutLinkedDeps(importer)
     }
   }
   const dedicatedLockfile = pruneSharedLockfile(lockfile)
@@ -36,7 +36,12 @@ export default async function (lockfileDir: string, projectDir: string) {
   await writeWantedLockfile(projectDir, dedicatedLockfile)
 
   const { manifest, writeProjectManifest } = await readProjectManifest(projectDir)
-  const publishManifest = await exportableManifest(projectDir, manifest)
+  const publishManifest = await createExportableManifest(projectDir, manifest, {
+    // Since @pnpm/make-dedicated-lockfile is deprecated, avoid supporting new
+    // features like pnpm catalogs. Passing in an empty catalog object
+    // intentionally.
+    catalogs: {},
+  })
   await writeProjectManifest(publishManifest)
 
   const modulesDir = path.join(projectDir, 'node_modules')
@@ -59,6 +64,7 @@ export default async function (lockfileDir: string, projectDir: string) {
       '--fix-lockfile',
       '--filter=.',
       '--no-link-workspace-packages',
+      '--config.dedupe-peer-dependents=false', // TODO: remove this. It should work without it
     ], {
       cwd: projectDir,
     })
@@ -71,16 +77,13 @@ export default async function (lockfileDir: string, projectDir: string) {
   }
 }
 
-function projectSnapshotWithoutLinkedDeps (projectSnapshot: ProjectSnapshot) {
+function projectSnapshotWithoutLinkedDeps (projectSnapshot: ProjectSnapshot): ProjectSnapshot {
   const newProjectSnapshot: ProjectSnapshot = {
     specifiers: projectSnapshot.specifiers,
   }
   for (const depField of DEPENDENCIES_FIELDS) {
     if (projectSnapshot[depField] == null) continue
-    newProjectSnapshot[depField] = fromPairs(
-      Object.entries(projectSnapshot[depField]!)
-        .filter(([depName, depVersion]) => !depVersion.startsWith('link:'))
-    )
+    newProjectSnapshot[depField] = pickBy((depVersion) => !depVersion.startsWith('link:'), projectSnapshot[depField])
   }
   return newProjectSnapshot
 }
