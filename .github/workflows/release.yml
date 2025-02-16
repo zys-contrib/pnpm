@@ -9,42 +9,47 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  release:
     permissions:
       contents: write  # for softprops/action-gh-release to create GitHub release
     runs-on: ubuntu-latest
     environment: release
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Install ldid
         run: |
           sudo apt-get update
-          sudo apt-get install git build-essential libplist-dev libssl-dev openssl qemu-user-binfmt
+          sudo apt-get install git build-essential libplist-dev libssl-dev openssl qemu-user-binfmt pkg-config
           cd /tmp
-          git clone git://git.saurik.com/ldid.git
+          git clone https://gitlab.com/opensource-saurik/ldid.git
           cd ldid
           git submodule update --init
           gcc -I. -c -o lookup2.o lookup2.c
-          g++ -std=c++11 -o ldid lookup2.o ldid.cpp -I. -lcrypto -lplist -lxml2
+          g++ -std=c++11 -o ldid lookup2.o ldid.cpp -I. -lcrypto $(pkg-config --cflags --libs libplist-2.0) -lxml2
           sudo mv ldid /usr/local/bin
-      - name: install pnpm and npm
-        run: |
-          curl -L https://get.pnpm.io/v6.16.js | node - add --global pnpm@next-7 npm@7
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.0.0
+        with:
+          standalone: true
       - name: pnpm install
-        run: pnpm install
+        # We use --force because we want all artifacts of @reflink/reflink to be installed.
+        run: pnpm install --force
       - name: Publish Packages
+        continue-on-error: true
         env:
+          # setting the "npm_config_//registry.npmjs.org/:_authToken" env variable directly doesn't work.
+          # probably "pnpm release" doesn't pass auth tokens to child processes
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          pnpm config set "//registry.npmjs.org/:_authToken" "${NPM_TOKEN}"
+          npm config set "//registry.npmjs.org/:_authToken" "${NPM_TOKEN}" # pnpm config set is broken
           pnpm release
       - name: Copy Artifacts
         run: pnpm run copy-artifacts
       - name: Generate release description
         run: pnpm run make-release-description
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           draft: true
           files: dist/*

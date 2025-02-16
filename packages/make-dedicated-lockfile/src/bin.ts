@@ -1,10 +1,10 @@
-import PnpmError from '@pnpm/error'
-import findWorkspaceDir from '@pnpm/find-workspace-dir'
-import makeDedicatedLockfile from '.'
+import { PnpmError } from '@pnpm/error'
+import { findWorkspaceDir } from '@pnpm/find-workspace-dir'
+import { makeDedicatedLockfile } from '.'
 
 main() // eslint-disable-line
 
-async function main () {
+async function main (): Promise<void> {
   const projectDir = process.cwd()
   const lockfileDir = await findWorkspaceDir(projectDir)
   if (!lockfileDir) {

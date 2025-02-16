@@ -1,0 +1,94 @@
+{
+  "name": "@pnpm/plugin-commands-rebuild",
+  "version": "1001.1.7",
+  "description": "Commands for rebuilding dependencies",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "!*.map"
+  ],
+  "engines": {
+    "node": ">=18.12"
+  },
+  "scripts": {
+    "lint": "eslint \"src/**/*.ts\" \"test/**/*.ts\"",
+    "_test": "cross-env PNPM_REGISTRY_MOCK_PORT=7772 jest",
+    "test": "pnpm run compile && pnpm run _test",
+    "prepublishOnly": "pnpm run compile",
+    "compile": "tsc --build && pnpm run lint --fix"
+  },
+  "repository": "https://github.com/pnpm/pnpm/blob/main/exec/plugin-commands-rebuild",
+  "keywords": [
+    "pnpm10",
+    "pnpm",
+    "rebuild"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pnpm/pnpm/issues"
+  },
+  "homepage": "https://github.com/pnpm/pnpm/blob/main/exec/plugin-commands-rebuild#readme",
+  "devDependencies": {
+    "@pnpm/assert-project": "workspace:*",
+    "@pnpm/crypto.object-hasher": "workspace:*",
+    "@pnpm/logger": "workspace:*",
+    "@pnpm/plugin-commands-rebuild": "workspace:*",
+    "@pnpm/prepare": "workspace:*",
+    "@pnpm/registry-mock": "catalog:",
+    "@pnpm/test-fixtures": "workspace:*",
+    "@pnpm/test-ipc-server": "workspace:*",
+    "@pnpm/workspace.filter-packages-from-dir": "workspace:*",
+    "@types/ramda": "catalog:",
+    "@types/semver": "catalog:",
+    "@types/sinon": "catalog:",
+    "execa": "catalog:",
+    "sinon": "catalog:",
+    "write-yaml-file": "catalog:"
+  },
+  "dependencies": {
+    "@pnpm/builder.policy": "catalog:",
+    "@pnpm/calc-dep-state": "workspace:*",
+    "@pnpm/cli-utils": "workspace:*",
+    "@pnpm/common-cli-options-help": "workspace:*",
+    "@pnpm/config": "workspace:*",
+    "@pnpm/constants": "workspace:*",
+    "@pnpm/core-loggers": "workspace:*",
+    "@pnpm/dependency-path": "workspace:*",
+    "@pnpm/deps.graph-sequencer": "workspace:*",
+    "@pnpm/error": "workspace:*",
+    "@pnpm/get-context": "workspace:*",
+    "@pnpm/lifecycle": "workspace:*",
+    "@pnpm/link-bins": "workspace:*",
+    "@pnpm/lockfile.types": "workspace:*",
+    "@pnpm/lockfile.utils": "workspace:*",
+    "@pnpm/lockfile.walker": "workspace:*",
+    "@pnpm/modules-yaml": "workspace:*",
+    "@pnpm/normalize-registries": "workspace:*",
+    "@pnpm/npm-package-arg": "catalog:",
+    "@pnpm/sort-packages": "workspace:*",
+    "@pnpm/store-connection-manager": "workspace:*",
+    "@pnpm/store-controller-types": "workspace:*",
+    "@pnpm/store.cafs": "workspace:*",
+    "@pnpm/types": "workspace:*",
+    "@pnpm/worker": "workspace:*",
+    "@pnpm/workspace.find-packages": "workspace:*",
+    "load-json-file": "catalog:",
+    "mem": "catalog:",
+    "p-limit": "catalog:",
+    "ramda": "catalog:",
+    "render-help": "catalog:",
+    "run-groups": "catalog:",
+    "semver": "catalog:"
+  },
+  "peerDependencies": {
+    "@pnpm/logger": ">=5.1.0 <1001.0.0"
+  },
+  "funding": "https://opencollective.com/pnpm",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "jest": {
+    "preset": "@pnpm/jest-config"
+  }
+}

@@ -1,15 +1,26 @@
-import baseLogger, {
-  LogBase,
+import {
+  type LogBase,
+  logger,
 } from '@pnpm/logger'
 
-export const statsLogger = baseLogger<StatsMessage>('stats')
+export const statsLogger = logger<StatsMessage>('stats')
 
-export type StatsMessage = {
+export interface StatsMessageBase {
   prefix: string
-} & ({
-  added: number
-} | {
-  removed: number
-})
+  added?: number
+  removed?: number
+}
 
-export type StatsLog = {name: 'pnpm:stats'} & LogBase & StatsMessage
+export interface StatsMessageAdded extends StatsMessageBase {
+  added: number
+  removed?: never
+}
+
+export interface StatsMessageRemoved extends StatsMessageBase {
+  added?: never
+  removed: number
+}
+
+export type StatsMessage = StatsMessageAdded | StatsMessageRemoved
+
+export type StatsLog = { name: 'pnpm:stats' } & LogBase & StatsMessage
