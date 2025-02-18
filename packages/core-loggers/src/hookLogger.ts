@@ -1,8 +1,9 @@
-import baseLogger, {
-  LogBase,
+import {
+  type LogBase,
+  logger,
 } from '@pnpm/logger'
 
-export const hookLogger = baseLogger('hook')
+export const hookLogger = logger('hook')
 
 export interface HookMessage {
   from: string
@@ -11,4 +12,4 @@ export interface HookMessage {
   prefix: string
 }
 
-export type HookLog = {name: 'pnpm:hook'} & LogBase & HookMessage
+export type HookLog = { name: 'pnpm:hook' } & LogBase & HookMessage

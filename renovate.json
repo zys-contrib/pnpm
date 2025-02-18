@@ -23,7 +23,7 @@
     "@pnpm/local-resolver",
     "@pnpm/lockfile-file",
     "@pnpm/lockfile-types",
-    "@pnpm/lockfile-utils",
+    "@pnpm/lockfile.utils",
     "@pnpm/logger",
     "@pnpm/modules-cleaner",
     "@pnpm/modules-yaml",
@@ -34,7 +34,7 @@
     "@pnpm/package-requester",
     "@pnpm/package-store",
     "@pnpm/pkgid-to-filename",
-    "@pnpm/prune-lockfile",
+    "@pnpm/lockfile.pruner",
     "@pnpm/read-projects-context",
     "@pnpm/read-project-manifest",
     "@pnpm/read-modules-dir",
@@ -53,7 +53,7 @@
     "@pnpm/utils",
     "@pnpm/write-project-manifest",
     "dependencies-hierarchy",
-    "dependency-path",
+    "@pnpm/dependency-path",
     "fetch-from-npm-registry",
     "find-packages",
     "npm",
@@ -110,14 +110,6 @@
     {
       "packageNames": ["p-defer"],
       "allowedVersions": "^3.0.0"
-    },
-    {
-      "packageNames": ["strip-ansi"],
-      "allowedVersions": "^6.0.0"
-    },
-    {
-      "packageNames": ["wrap-ansi"],
-      "allowedVersions": "^7.0.0"
     },
     {
       "packageNames": ["escape-string-regexp"],

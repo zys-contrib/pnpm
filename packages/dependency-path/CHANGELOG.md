@@ -1,262 +1,257 @@
-# dependency-path
+# @pnpm/dependency-path
 
-## 9.2.3
-
-### Patch Changes
-
-- Updated dependencies [2bca856e0]
-  - @pnpm/crypto.base32-hash@1.0.1
-
-## 9.2.2
+## 1000.0.2
 
 ### Patch Changes
 
-- fc581d371: Remove patchFileHash from createPeersFolderSuffix().
+- Updated dependencies [b562deb]
+  - @pnpm/types@1000.1.1
+  - @pnpm/crypto.hash@1000.0.0
 
-## 9.2.1
-
-### Patch Changes
-
-- Updated dependencies [8e5b77ef6]
-  - @pnpm/types@8.4.0
-
-## 9.2.0
-
-### Minor Changes
-
-- c635f9fc1: Add patchFileHash as an optional argument to createPeersFolderSuffix().
+## 1000.0.1
 
 ### Patch Changes
 
-- Updated dependencies [2a34b21ce]
-  - @pnpm/types@8.3.0
-
-## 9.1.4
-
-### Patch Changes
-
-- 725636a90: Use @pnpm/crypto.base32-hash.
-- Updated dependencies [fb5bbfd7a]
-- Updated dependencies [725636a90]
-  - @pnpm/types@8.2.0
-  - @pnpm/crypto.base32-hash@1.0.0
-
-## 9.1.3
-
-### Patch Changes
-
-- Updated dependencies [4d39e4a0c]
-  - @pnpm/types@8.1.0
-
-## 9.1.2
-
-### Patch Changes
-
-- c57695550: Sanitize the directory names created inside `node_modules/.pnpm` and inside the global store [#4716](https://github.com/pnpm/pnpm/issues/4716)
-
-## 9.1.1
-
-### Patch Changes
-
-- Updated dependencies [18ba5e2c0]
-  - @pnpm/types@8.0.1
-
-## 9.1.0
-
-### Minor Changes
-
-- 0a70aedb1: Export new function: createPeersFolderSuffix().
-
-## 9.0.0
-
-### Major Changes
-
-- faf830b8f: Use a nicer path for saving local dependencies in the virtual store.
-- 542014839: Node.js 12 is not supported.
-
-### Patch Changes
-
-- Updated dependencies [d504dc380]
-- Updated dependencies [542014839]
-  - @pnpm/types@8.0.0
-
-## 8.0.11
-
-### Patch Changes
-
-- Updated dependencies [b138d048c]
-  - @pnpm/types@7.10.0
-
-## 8.0.10
-
-### Patch Changes
-
-- Updated dependencies [26cd01b88]
-  - @pnpm/types@7.9.0
-
-## 8.0.9
-
-### Patch Changes
-
-- Updated dependencies [b5734a4a7]
-  - @pnpm/types@7.8.0
-
-## 8.0.8
-
-### Patch Changes
-
-- Updated dependencies [6493e0c93]
-  - @pnpm/types@7.7.1
-
-## 8.0.7
-
-### Patch Changes
-
-- Updated dependencies [ba9b2eba1]
-  - @pnpm/types@7.7.0
-
-## 8.0.6
-
-### Patch Changes
-
-- Updated dependencies [302ae4f6f]
-  - @pnpm/types@7.6.0
-
-## 8.0.5
-
-### Patch Changes
-
-- Updated dependencies [4ab87844a]
-  - @pnpm/types@7.5.0
-
-## 8.0.4
-
-### Patch Changes
-
-- Updated dependencies [b734b45ea]
-  - @pnpm/types@7.4.0
-
-## 8.0.3
-
-### Patch Changes
-
-- Updated dependencies [8e76690f4]
-  - @pnpm/types@7.3.0
-
-## 8.0.2
-
-### Patch Changes
-
-- 6c418943c: Fix `tryGetPackageId()`, it should parse correctly a dependency path that has peer dependency names with underscores.
-
-## 8.0.1
-
-### Patch Changes
-
-- Updated dependencies [724c5abd8]
-  - @pnpm/types@7.2.0
-
-## 8.0.0
-
-### Major Changes
-
-- 20e2f235d: Add a unique prefix to any directory name inside the virtual store that has non-lowercase characters. This is important to avoid conflicts in case insensitive filesystems.
-
-## 7.0.1
-
-### Patch Changes
-
-- Updated dependencies [97c64bae4]
-  - @pnpm/types@7.1.0
-
-## 7.0.0
-
-### Major Changes
-
-- 9ceab68f0: Use + instead of # to escape / in paths.
+- Updated dependencies [9591a18]
+  - @pnpm/types@1000.1.0
+  - @pnpm/crypto.hash@1000.0.0
 
 ## 6.0.0
 
 ### Major Changes
 
-- 97b986fbc: Node.js 10 support is dropped. At least Node.js 12.17 is required for the package to work.
-- f2bb5cbeb: All packages inside the virtual store directory should be on the same depth. Instead of subdirectories, one directory is used with # instead of slashes.
+- dcd2917: Use sha256 for hashing long paths inside `node_modules/.pnpm`.
+- d55b259: Escape the `#` character in directory names within the virtual store (`node_modules/.pnpm`) [#8557](https://github.com/pnpm/pnpm/pull/8557).
 
 ### Patch Changes
 
-- e4efddbd2: Don't use ":" in path to dependency.
-- Updated dependencies [97b986fbc]
-  - @pnpm/types@7.0.0
+- Updated dependencies [dcd2917]
+  - @pnpm/crypto.hash@1.0.0
+
+## 5.1.7
+
+### Patch Changes
+
+- @pnpm/crypto.base32-hash@3.0.1
+
+## 5.1.6
+
+### Patch Changes
+
+- Updated dependencies [d500d9f]
+  - @pnpm/types@12.2.0
+  - @pnpm/crypto.base32-hash@3.0.0
+
+## 5.1.5
+
+### Patch Changes
+
+- Updated dependencies [7ee59a1]
+  - @pnpm/types@12.1.0
+  - @pnpm/crypto.base32-hash@3.0.0
+
+## 5.1.4
+
+### Patch Changes
+
+- Updated dependencies [cb006df]
+  - @pnpm/types@12.0.0
+  - @pnpm/crypto.base32-hash@3.0.0
+
+## 5.1.3
+
+### Patch Changes
+
+- Updated dependencies [0ef168b]
+  - @pnpm/types@11.1.0
+  - @pnpm/crypto.base32-hash@3.0.0
+
+## 5.1.2
+
+### Patch Changes
+
+- Updated dependencies [dd00eeb]
+- Updated dependencies
+  - @pnpm/types@11.0.0
+  - @pnpm/crypto.base32-hash@3.0.0
 
 ## 5.1.1
 
 ### Patch Changes
 
-- Updated dependencies [9ad8c27bf]
-  - @pnpm/types@6.4.0
+- Updated dependencies [13e55b2]
+  - @pnpm/types@10.1.1
+  - @pnpm/crypto.base32-hash@3.0.0
 
 ## 5.1.0
 
 ### Minor Changes
 
-- e27dcf0dc: Add depPathToFilename().
-
-## 5.0.6
+- 47341e5: **Semi-breaking.** Dependency key names in the lockfile are shortened if they are longer than 1000 characters. We don't expect this change to affect many users. Affected users most probably can't run install successfully at the moment. This change is required to fix some edge cases in which installation fails with an out-of-memory error or "Invalid string length (RangeError: Invalid string length)" error. The max allowed length of the dependency key can be controlled with the `peers-suffix-max-length` setting [#8177](https://github.com/pnpm/pnpm/pull/8177).
 
 ### Patch Changes
 
-- 39142e2ad: Update encode-registry to v3.
-
-## 5.0.5
-
-### Patch Changes
-
-- Updated dependencies [b5d694e7f]
-  - @pnpm/types@6.3.1
-
-## 5.0.4
-
-### Patch Changes
-
-- Updated dependencies [d54043ee4]
-  - @pnpm/types@6.3.0
-
-## 5.0.3
-
-### Patch Changes
-
-- a2ef8084f: Use the same versions of dependencies across the pnpm monorepo.
-
-## 5.0.2
-
-### Patch Changes
-
-- Updated dependencies [db17f6f7b]
-  - @pnpm/types@6.2.0
-
-## 5.0.1
-
-### Patch Changes
-
-- Updated dependencies [71a8c8ce3]
-  - @pnpm/types@6.1.0
+- @pnpm/crypto.base32-hash@3.0.0
 
 ## 5.0.0
 
 ### Major Changes
 
-- 41d92948b: relative() should always remove the registry from the IDs start.
-
-## 4.0.7
+- Breaking changes to the API.
 
 ### Patch Changes
 
-- Updated dependencies [da091c711]
-  - @pnpm/types@6.0.0
+- Updated dependencies [45f4262]
+  - @pnpm/types@10.1.0
+  - @pnpm/crypto.base32-hash@3.0.0
 
-## 4.0.7-alpha.0
+## 4.0.0
+
+### Major Changes
+
+- 9719a42: New setting called `virtual-store-dir-max-length` added to modify the maximum allowed length of the directories inside `node_modules/.pnpm`. The default length is set to 120 characters. This setting is particularly useful on Windows, where there is a limit to the maximum length of a file path [#7355](https://github.com/pnpm/pnpm/issues/7355).
 
 ### Patch Changes
 
-- Updated dependencies [da091c71]
-  - @pnpm/types@6.0.0-alpha.0
+- @pnpm/crypto.base32-hash@3.0.0
+
+## 3.0.0
+
+### Major Changes
+
+- cdd8365: Package ID does not contain the registry domain.
+- 89b396b: createPeersFolderSuffix renamed to createPeersDirSuffix.
+- 43cdd87: Node.js v16 support dropped. Use at least Node.js v18.12.
+- d381a60: Support for lockfile v5 is dropped. Use pnpm v8 to convert lockfile v5 to lockfile v6 [#7470](https://github.com/pnpm/pnpm/pull/7470).
+
+### Minor Changes
+
+- 98a1266: createPeersDirSuffix may accept dep path.
+
+### Patch Changes
+
+- Updated dependencies [7733f3a]
+- Updated dependencies [43cdd87]
+- Updated dependencies [730929e]
+  - @pnpm/types@10.0.0
+  - @pnpm/crypto.base32-hash@3.0.0
+
+## 2.1.7
+
+### Patch Changes
+
+- Updated dependencies [4d34684f1]
+  - @pnpm/types@9.4.2
+  - @pnpm/crypto.base32-hash@2.0.0
+
+## 2.1.6
+
+### Patch Changes
+
+- Updated dependencies
+  - @pnpm/types@9.4.1
+  - @pnpm/crypto.base32-hash@2.0.0
+
+## 2.1.5
+
+### Patch Changes
+
+- Updated dependencies [43ce9e4a6]
+  - @pnpm/types@9.4.0
+  - @pnpm/crypto.base32-hash@2.0.0
+
+## 2.1.4
+
+### Patch Changes
+
+- Updated dependencies [d774a3196]
+  - @pnpm/types@9.3.0
+  - @pnpm/crypto.base32-hash@2.0.0
+
+## 2.1.3
+
+### Patch Changes
+
+- Updated dependencies [aa2ae8fe2]
+  - @pnpm/types@9.2.0
+  - @pnpm/crypto.base32-hash@2.0.0
+
+## 2.1.2
+
+### Patch Changes
+
+- Updated dependencies [a9e0b7cbf]
+  - @pnpm/types@9.1.0
+  - @pnpm/crypto.base32-hash@2.0.0
+
+## 2.1.1
+
+### Patch Changes
+
+- c0760128d: bump semver to 7.4.0
+
+## 2.1.0
+
+### Minor Changes
+
+- 94f94eed6: Export `indexOfPeersSuffix`.
+
+### Patch Changes
+
+- 5087636b6: Repeat installation should work on a project that has a dependency with () chars in the scope name [#6348](https://github.com/pnpm/pnpm/issues/6348).
+
+## 2.0.0
+
+### Major Changes
+
+- ca8f51e60: Change the way depPathToFilename is making paths shorter.
+- eceaa8b8b: Node.js 14 support dropped.
+- 0e26acb0f: Rename createPeersFolderSuffixNewFormat to createPeersFolderSuffix.
+
+### Patch Changes
+
+- Updated dependencies [eceaa8b8b]
+  - @pnpm/crypto.base32-hash@2.0.0
+  - @pnpm/types@9.0.0
+
+## 1.1.3
+
+### Patch Changes
+
+- d89d7a078: `parse()` should not fail on dependency path pointing to a local dependency.
+
+## 1.1.2
+
+### Patch Changes
+
+- 9247f6781: Directories inside the virtual store should not contain the ( or ) chars. This is to fix issues with storybook and the new v6 `pnpm-lock.yaml` lockfile format [#5976](https://github.com/pnpm/pnpm/issues/5976).
+
+## 1.1.1
+
+### Patch Changes
+
+- 0f6e95872: The new lockfile format should not be broken on repeat install.
+
+## 1.1.0
+
+### Minor Changes
+
+- 3ebce5db7: Updated the functions to support dependency paths used in the 6th version of the lockfile. Exported a new function: createPeersFolderSuffixNewFormat.
+
+### Patch Changes
+
+- @pnpm/crypto.base32-hash@1.0.1
+
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [b77651d14]
+  - @pnpm/types@8.10.0
+  - @pnpm/crypto.base32-hash@1.0.1
+
+## 1.0.0
+
+### Major Changes
+
+- 313702d76: Project renamed from `dependency-path` to `@pnpm/dependency-path`.

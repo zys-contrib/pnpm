@@ -1,8 +1,9 @@
-import baseLogger, {
-  LogBase,
+import {
+  type LogBase,
+  logger,
 } from '@pnpm/logger'
 
-export const rootLogger = baseLogger<RootMessage>('root')
+export const rootLogger = logger<RootMessage>('root')
 
 export type DependencyType = 'prod' | 'dev' | 'optional'
 
@@ -26,4 +27,4 @@ export type RootMessage = {
   }
 })
 
-export type RootLog = {name: 'pnpm:root'} & LogBase & RootMessage
+export type RootLog = { name: 'pnpm:root' } & LogBase & RootMessage

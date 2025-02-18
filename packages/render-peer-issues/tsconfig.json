@@ -6,9 +6,18 @@
   },
   "include": [
     "src/**/*.ts",
-    "../../typings/**/*.d.ts"
+    "../../__typings__/**/*.d.ts"
   ],
   "references": [
+    {
+      "path": "../../config/matcher"
+    },
+    {
+      "path": "../../config/parse-overrides"
+    },
+    {
+      "path": "../error"
+    },
     {
       "path": "../types"
     }

@@ -1,6 +1,6 @@
 {
   "name": "@pnpm/make-dedicated-lockfile",
-  "version": "0.3.15",
+  "version": "1000.0.8",
   "description": "Creates a dedicated lockfile for a subset of workspace projects",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -11,10 +11,10 @@
     "bin"
   ],
   "engines": {
-    "node": ">=14.6"
+    "node": ">=18.12"
   },
   "scripts": {
-    "lint": "eslint src/**/*.ts test/**/*.ts",
+    "lint": "eslint \"src/**/*.ts\" \"test/**/*.ts\"",
     "_test": "jest",
     "test": "pnpm run compile && pnpm run _test",
     "prepublishOnly": "pnpm run compile",
@@ -22,7 +22,7 @@
   },
   "repository": "https://github.com/pnpm/pnpm/blob/main/packages/make-dedicated-lockfile",
   "keywords": [
-    "pnpm7",
+    "pnpm10",
     "pnpm",
     "make-dedicated-lockfile"
   ],
@@ -33,24 +33,29 @@
   "homepage": "https://github.com/pnpm/pnpm/blob/main/packages/make-dedicated-lockfile#readme",
   "dependencies": {
     "@pnpm/error": "workspace:*",
-    "@pnpm/exec": "^2.0.0",
+    "@pnpm/exec": "catalog:",
     "@pnpm/exportable-manifest": "workspace:*",
     "@pnpm/find-workspace-dir": "workspace:*",
-    "@pnpm/lockfile-file": "workspace:*",
-    "@pnpm/logger": "^4.0.0",
-    "@pnpm/prune-lockfile": "workspace:*",
+    "@pnpm/lockfile.fs": "workspace:*",
+    "@pnpm/lockfile.pruner": "workspace:*",
+    "@pnpm/logger": "workspace:*",
     "@pnpm/read-project-manifest": "workspace:*",
     "@pnpm/types": "workspace:*",
-    "ramda": "^0.28.0",
-    "rename-overwrite": "^4.0.2"
+    "ramda": "catalog:",
+    "rename-overwrite": "catalog:"
   },
   "funding": "https://opencollective.com/pnpm",
   "devDependencies": {
     "@pnpm/make-dedicated-lockfile": "workspace:*",
     "@pnpm/test-fixtures": "workspace:*",
-    "@types/ramda": "0.28.14"
+    "@types/ramda": "catalog:",
+    "execa": "catalog:",
+    "pnpm": "workspace:^"
   },
   "exports": {
     ".": "./lib/index.js"
+  },
+  "jest": {
+    "preset": "@pnpm/jest-config"
   }
 }

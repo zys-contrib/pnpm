@@ -1,12 +1,20 @@
-import baseLogger, {
-  LogBase,
+import {
+  type LogBase,
+  logger,
 } from '@pnpm/logger'
 
-export const requestRetryLogger = baseLogger<RequestRetryMessage>('request-retry')
+export const requestRetryLogger = logger<RequestRetryMessage>('request-retry')
+
+export interface RequestRetryError extends Error {
+  httpStatusCode?: string
+  status?: string
+  errno?: number
+  code?: string
+}
 
 export interface RequestRetryMessage {
   attempt: number
-  error: Error
+  error: RequestRetryError
   maxRetries: number
   method: string
   timeout: number
